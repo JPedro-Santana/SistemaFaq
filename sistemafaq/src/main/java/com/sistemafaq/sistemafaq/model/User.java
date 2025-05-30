@@ -7,14 +7,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-//Lombok gera automaticamente os construtores e getters e setters
-@Data
-@AllArgsConstructor
 
 @Entity
 @Table(name="user")
-public class UserModel {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
