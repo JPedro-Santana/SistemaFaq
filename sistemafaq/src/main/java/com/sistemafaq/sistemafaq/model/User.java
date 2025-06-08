@@ -1,5 +1,6 @@
 package com.sistemafaq.sistemafaq.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,10 +20,18 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="name", nullable=false)
     private String name;
-    private String password;
+
+    @Column(name="email", nullable=false)
     private String email;
-    private String image;
+
+    @Column(name="password", nullable=false)
+    private String password;
+
+    @Column
+    private String profileImage;
 
 
 }

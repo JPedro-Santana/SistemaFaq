@@ -1,10 +1,20 @@
 package com.sistemafaq.sistemafaq.service;
 
+
+
 import org.springframework.stereotype.Service;
+
+
+import com.sistemafaq.sistemafaq.repository.UserRepository;
 
 @Service
 public class UserService {
 
-    //O usuario pode se cadastrar e logar
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
 
 }
