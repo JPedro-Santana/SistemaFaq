@@ -3,7 +3,6 @@ package com.sistemafaq.sistemafaq.service;
 
 import org.springframework.stereotype.Service;
 
-
 import com.sistemafaq.sistemafaq.repository.AnswerRepository;
 
 @Service
@@ -14,7 +13,7 @@ public class AnswerService {
     public AnswerService(AnswerRepository answerRepository) {
         this.answerRepository = answerRepository;
     }
-
+//crud, Sistema de Curtidas ou Avaliação
 
 
 }

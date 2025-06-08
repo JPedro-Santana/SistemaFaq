@@ -1,5 +1,7 @@
 package com.sistemafaq.sistemafaq.model;
 
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,14 +14,14 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name="user")
+@Table(name="tb_user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @Column(name="name", nullable=false)
     private String name;
@@ -30,7 +32,7 @@ public class User {
     @Column(name="password", nullable=false)
     private String password;
 
-    @Column
+
     private String profileImage;
 
 

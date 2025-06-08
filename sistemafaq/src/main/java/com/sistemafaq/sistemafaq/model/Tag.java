@@ -3,7 +3,6 @@ package com.sistemafaq.sistemafaq.model;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="tag")
+@Table(name="tb_tag")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,7 +23,7 @@ public class Tag {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Long id;
     private String name;
-
+      //lista com as categorias
     private List<Question> questions;
     private List<Category> categoryList = new ArrayList<>();
 
