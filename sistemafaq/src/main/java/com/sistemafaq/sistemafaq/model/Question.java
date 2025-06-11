@@ -1,19 +1,27 @@
 package com.sistemafaq.sistemafaq.model;
 
 
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 
-@Entity
 @Data
 @AllArgsConstructor
+@Entity
 @Table(name="tb_question")
 public class Question{
 
@@ -27,9 +35,12 @@ public class Question{
      private String content;
     private Boolean solved = false;
     private User author;
-    private Integer likes = 0;
+    private int likes = 0;
 
-    //private List<Answer> answer;
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+    private List<Answer> answers = new ArrayList<>();
+    @ElementCollection
+    private List<String> tags;
 
     //tag
       /*lista com respostas?
@@ -38,13 +49,11 @@ public class Question{
          @JoinColumn(name = "category_id", nullabel=false)
         private Category category;
 
-    @ElementCollection
-    private List<String> tags; ou
+     ou
     @CollectionTable(name = "pergunta_tags", joinColumns = @JoinColumn(name = "pergunta_id"))
     @Column(name = "tag")
     private Set<String> tags = new HashSet<>();  // Tags para filtragem
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
-    private List<Answer> answers = new ArrayList<>();*/
+    */ 
 
 }

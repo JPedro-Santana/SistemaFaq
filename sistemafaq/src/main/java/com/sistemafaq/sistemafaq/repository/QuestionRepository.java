@@ -20,8 +20,6 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
            "LOWER(p.descricao) LIKE LOWER(concat('%', :query, '%'))")
     List<Pergunta> buscarPorPalavraChave(@Param("query") String query);
     
-    List<Pergunta> findByCategoriaNome(String categoria);
-    
     // Perguntas mais úteis
     Page<Pergunta> findAllByOrderByVotosUteisDesc(Pageable pageable);
     

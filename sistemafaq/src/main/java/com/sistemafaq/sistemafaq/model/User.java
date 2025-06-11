@@ -13,11 +13,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Entity
-@Table(name="tb_user")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name="tb_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +32,6 @@ public class User {
     @Column(name="password", nullable=false)
     private String password;
 
-
     private String profileImage;
-
 
 }
