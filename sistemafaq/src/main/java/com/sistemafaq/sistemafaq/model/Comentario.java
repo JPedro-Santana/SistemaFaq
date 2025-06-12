@@ -14,14 +14,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="tb_tag")
-public class Tag {
+@Table(name="tb_comentario")
+public class Comentario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
-    private String name;
+
+    private String nomeUsuario;
+    private String conteudo;
+    private boolean aprovado;
 
     @ManyToOne
-    private Categoria category;
-
+    private Categoria categoria;
 }
