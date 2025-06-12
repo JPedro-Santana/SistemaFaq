@@ -8,6 +8,4 @@ import com.sistemafaq.sistemafaq.model.Tag;
 @Repository
 public interface TagRepository extends JpaRepository<Tag, Long> {
 
-  
-    //find by tag?
 }

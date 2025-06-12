@@ -1,6 +1,7 @@
 package com.sistemafaq.sistemafaq.model;
 
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,21 +18,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="tb_user")
-public class User {
+@Table(name="tb_categoria")
+public class Categoria {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private UUID id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name="name", nullable=false)
-    private String name;
+    @Column(name="nome", unique=true)
+    private String nome;
 
-    @Column(name="email", nullable=false)
-    private String email;
-
-    @Column(name="password", nullable=false)
-    private String password;
-
-    private String profileImage;
+    // cada categoria vai ter uma lista com suas respectivas perguntas
+    private  List<Pergunta> perguntaList = new ArrayList<>();
 
 }
